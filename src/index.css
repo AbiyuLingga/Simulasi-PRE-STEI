@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --lab-surface: #14191f;
+  --lab-surface-alt: #1e252e;
+  --lab-border: #3a4452;
+  --lab-text: #f8fafc;
+  --lab-text-muted: #cbd5e1;
+  --lab-accent: #f59e0b;
+  --lab-accent-text: #111827;
+  --lab-danger: #b91c1c;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #161b22;
+    color: var(--lab-text);
+    font-family: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a[href],
+  button:not(:disabled),
+  summary,
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled),
+  input[type="range"]:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [role="tab"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  select:disabled,
+  input:disabled {
+    cursor: not-allowed;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--lab-accent);
+    outline-offset: 2px;
+  }
+}
+
+.font-mono-readout {
+  font-family: "IBM Plex Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
